@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.echo.ui.auth.SplashFragment"
+        android:label="Splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splashFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.echo.ui.auth.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <action
+            android:id="@+id/action_loginFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.echo.ui.auth.RegisterFragment"
+        android:label="Register"
+        tools:layout="@layout/fragment_register">
+        <action
+            android:id="@+id/action_registerFragment_to_dashboardFragment"
+            app:destination="@id/dashboardFragment"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment android:id="@+id/dashboardFragment" android:name="com.example.echo.ui.dashboard.DashboardFragment" android:label="Dashboard" />
+    <fragment android:id="@+id/trackerFragment" android:name="com.example.echo.ui.tracker.TrackerFragment" android:label="Mental Tracker">
+        <argument
+            android:name="entryId"
+            app:argType="integer"
+            android:defaultValue="-1" />
+    </fragment>
+    <fragment android:id="@+id/historyFragment" android:name="com.example.echo.ui.history.HistoryFragment" android:label="History">
+        <action
+            android:id="@+id/action_historyFragment_to_trackerFragment"
+            app:destination="@id/trackerFragment" />
+    </fragment>
+    <fragment android:id="@+id/reflectionFragment" android:name="com.example.echo.ui.reflection.ReflectionFragment" android:label="Reflection Mirror" />
+    <fragment android:id="@+id/focusFragment" android:name="com.example.echo.ui.focus.FocusFragment" android:label="Focus Session" />
+    <fragment android:id="@+id/tipsFragment" android:name="com.example.echo.ui.tips.TipsFragment" android:label="Wellness Tips" />
+    <fragment android:id="@+id/supportFragment" android:name="com.example.echo.ui.support.SupportFragment" android:label="Support Center" />
+    <fragment android:id="@+id/settingsFragment" android:name="com.example.echo.ui.settings.SettingsFragment" android:label="Settings" />
+    <fragment android:id="@+id/aboutFragment" android:name="com.example.echo.ui.about.AboutFragment" android:label="About" />
+
+</navigation>

@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:cardBackgroundColor="#CCF5F5F5"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="4dp"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            tools:context=".ui.tracker.TrackerFragment">
+
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mental Wellness Tracker"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorPrimaryDark"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:hint="Your Name (Optional)"
+            app:layout_constraintTop_toBottomOf="@id/tvTitle">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/etName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvMoodLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="How are you feeling?"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tilName"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/tilMood"
+            style="@style/Widget.Material3.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvMoodLabel">
+
+            <AutoCompleteTextView
+                android:id="@+id/spinnerMood"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="?attr/colorPrimaryDark"
+                android:background="@null" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/tvStressLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stress Level (1-10)"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tilMood"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <SeekBar
+            android:id="@+id/seekBarStress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:max="9"
+            android:progress="4"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStressLabel" />
+            
+        <TextView
+            android:id="@+id/tvStressValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/seekBarStress"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/tvActivitiesLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Activities Performed"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tvStressValue"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llActivities"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="8dp"
+            app:layout_constraintTop_toBottomOf="@id/tvActivitiesLabel">
+
+            <CheckBox android:id="@+id/cbMeditation" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Meditation" />
+            <CheckBox android:id="@+id/cbExercise" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Exercise" />
+            <CheckBox android:id="@+id/cbSocializing" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Socializing" />
+            <CheckBox android:id="@+id/cbReading" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Reading" />
+            <CheckBox android:id="@+id/cbSleep" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Quality Sleep" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnSubmit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Calculate Wellness Score"
+            android:layout_marginTop="32dp"
+            app:layout_constraintTop_toBottomOf="@id/llActivities" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</ScrollView>

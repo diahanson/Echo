@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@drawable/img">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="20dp"
+        tools:context=".ui.dashboard.DashboardFragment">
+
+        <!-- Greeting -->
+        <TextView
+            android:id="@+id/tvGreeting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Good Morning, Echo"
+            android:textColor="#FFFFFF"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:shadowColor="#40000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="8"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tvSubtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Choose your focus for today"
+            android:textColor="#E6E6FA"
+            android:textSize="14sp"
+            android:shadowColor="#40000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="4"
+            app:layout_constraintTop_toBottomOf="@id/tvGreeting"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Focus Chips (Chunky style) -->
+        <HorizontalScrollView
+            android:id="@+id/hsvFocus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="8dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    app:cardBackgroundColor="#80A67C98"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        app:cardBackgroundColor="#BFA67C98"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Focus"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>
+                
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    app:cardBackgroundColor="#80A67C98"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        app:cardBackgroundColor="#BFA67C98"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Sleep"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="100dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    app:cardBackgroundColor="#80A67C98"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="80dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        app:cardBackgroundColor="#BFA67C98"
+                        app:cardCornerRadius="8dp"
+                        app:cardElevation="0dp"
+                        app:strokeWidth="0dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Anxiety"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold" />
+                    </com.google.android.material.card.MaterialCardView>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Glassmorphism Container Card (Quote / Weather) -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardInfo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="#E6F5F5F5"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="4dp"
+            app:strokeWidth="0dp"
+            app:layout_constraintTop_toBottomOf="@id/hsvFocus">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Daily Insight"
+                    android:textColor="#78536A"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvQuote"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="Peace begins with a smile."
+                    android:textColor="#3D2336"
+                    android:textSize="16sp"
+                    android:textStyle="italic"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="#33A67C98"
+                    android:layout_marginVertical="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current State"
+                    android:textColor="#78536A"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvWeatherBadge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/badge_background"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:text="🌥️ Cloudy Mind"
+                    android:textColor="#FFFFFF"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Image Cards Header -->
+        <TextView
+            android:id="@+id/tvFeaturesHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Recommended Sessions"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:shadowColor="#40000000"
+            android:shadowDx="1"
+            android:shadowDy="1"
+            android:shadowRadius="4"
+            app:layout_constraintTop_toBottomOf="@id/cardInfo"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <!-- Vertical LinearLayout for Image Cards -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tvFeaturesHeader">
+
+            <!-- Tracker Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardTracker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/bg_card_tracker" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Mental Wellness Tracker"
+                            android:textColor="#3D2336"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Log your mood and activities."
+                            android:textColor="#78536A"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Journal Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardJournal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/bg_card_journal" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Reflection Mirror"
+                            android:textColor="#3D2336"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Write down your thoughts."
+                            android:textColor="#78536A"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Focus Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardFocus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/bg_card_focus" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Silence Mode"
+                            android:textColor="#3D2336"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Disconnect for a timed session."
+                            android:textColor="#78536A"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- History Card -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cardHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="32dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="4dp"
+                app:strokeWidth="0dp">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="140dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/bg_card_history" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Wellness History"
+                            android:textColor="#3D2336"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="4dp"
+                            android:text="Review your journey."
+                            android:textColor="#78536A"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

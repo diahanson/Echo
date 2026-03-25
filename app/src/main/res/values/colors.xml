@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary - Mauve/Plum to compliment the image -->
+    <color name="primary">#A67C98</color>
+    <color name="primary_dark">#78536A</color>
+    <color name="on_primary">#FFFFFF</color>
+    
+    <!-- Secondary - Soft Peach/Pink -->
+    <color name="secondary">#FFC6CE</color>
+    <color name="on_secondary">#3D2336</color>
+
+    <!-- Transparent background to let the image shine through -->
+    <color name="background">#00000000</color>
+    <!-- Deep Plum text for excellent contrast on the UI -->
+    <color name="on_background">#3D2336</color>
+    
+    <!-- Glassmorphism Surface (60% White) -->
+    <color name="surface">#99FFFFFF</color>
+    <color name="on_surface">#3D2336</color>
+
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    
+    <!-- Error -->
+    <color name="error">#B00020</color>
+    <color name="on_error">#FFFFFF</color>
+</resources>

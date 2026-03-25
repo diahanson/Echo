@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@android:color/transparent">
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        app:cardBackgroundColor="#CCF5F5F5"
+        app:cardCornerRadius="24dp"
+        app:cardElevation="4dp"
+        app:strokeWidth="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout 
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="24dp"
+            tools:context=".ui.focus.FocusFragment">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Silence Mode"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorPrimaryDark"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+        
+    <TextView
+        android:id="@+id/tvSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mental Detox Timer"
+        android:textSize="16sp"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp" />
+
+    <View
+        android:id="@+id/vBreathingCircle"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:background="@drawable/circle_background"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="05:00"
+        android:textSize="48sp"
+        android:textStyle="bold"
+        android:textColor="?attr/colorPrimaryDark"
+        app:layout_constraintTop_toTopOf="@id/vBreathingCircle"
+        app:layout_constraintBottom_toBottomOf="@id/vBreathingCircle"
+        app:layout_constraintStart_toStartOf="@id/vBreathingCircle"
+        app:layout_constraintEnd_toEndOf="@id/vBreathingCircle" />
+
+    <RadioGroup
+        android:id="@+id/rgModes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="48dp"
+        app:layout_constraintTop_toBottomOf="@id/vBreathingCircle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+        
+        <RadioButton
+            android:id="@+id/rb5Min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimaryDark"
+            android:buttonTint="?attr/colorPrimaryDark"
+            android:text="5 min"
+            android:checked="true"
+            android:layout_marginEnd="16dp"/>
+            
+        <RadioButton
+            android:id="@+id/rb15Min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimaryDark"
+            android:buttonTint="?attr/colorPrimaryDark"
+            android:text="15 min"
+            android:layout_marginEnd="16dp"/>
+            
+        <RadioButton
+            android:id="@+id/rb30Min"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="?attr/colorPrimaryDark"
+            android:buttonTint="?attr/colorPrimaryDark"
+            android:text="30 min" />
+            
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnStart"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:text="Start Focus Session"
+        android:layout_marginTop="32dp"
+        android:backgroundTint="?attr/colorSecondary"
+        android:textColor="?attr/colorOnSecondary"
+        app:layout_constraintTop_toBottomOf="@id/rgModes" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+</ScrollView>
