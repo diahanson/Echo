@@ -10,13 +10,13 @@
 Coupled with a sleek, edge-to-edge Glassmorphism design and deep Android API integrations, tracking your mental health has never felt so premium or private.
 
 ## Features
-*  Total Privacy & Security:* A completely offline architecture using Jetpack Room and SHA-256 cryptographic password hashing to secure your personal journal entries internally on the device.
-*  Daily Wellness Dashboard:* Easily log your sleep duration, water intake, daily exercise, and instantly calculate a "Wellness Score" summarizing your day.
-*  Reflective Journaling:* A safe, persistent text workspace to write daily reflections and document personal growth.
-*  Interactive History:* A swipeable, beautifully animated `RecyclerView` timeline that organizes all past wellness entries into translucent glass-morphic cards.
-*  Focus & Breathing Timer:* A built-in guided focus session providing an auto-scaling breathing animation paired with a countdown timer to rapidly de-stress.
-*  Native Support Gateway:* Direct hardware routing using Implicit Intents to instantly ping preset SMS and Email contacts in times of crisis.
-*  Glassmorphism UI:* A highly modern, calming aesthetic leveraging `WindowCompat` to bleed immersively underneath system bars (edge-to-edge).
+*  Total Privacy & Security: A completely offline architecture using Jetpack Room and SHA-256 cryptographic password hashing to secure your personal journal entries internally on the device.
+*  Daily Wellness Dashboard: Easily log your sleep duration, water intake, daily exercise, and instantly calculate a "Wellness Score" summarizing your day.
+*  Reflective Journaling: A safe, persistent text workspace to write daily reflections and document personal growth.
+*  Interactive History: A swipeable, beautifully animated `RecyclerView` timeline that organizes all past wellness entries into translucent glass-morphic cards.
+*  Focus & Breathing Timer: A built-in guided focus session providing an auto-scaling breathing animation paired with a countdown timer to rapidly de-stress.
+*  Native Support Gateway: Direct hardware routing using Implicit Intents to instantly ping preset SMS and Email contacts in times of crisis.
+*  Glassmorphism UI: A highly modern, calming aesthetic leveraging `WindowCompat` to bleed immersively underneath system bars (edge-to-edge).
 
 ##  Tech Stack
 * **Language:** Kotlin
